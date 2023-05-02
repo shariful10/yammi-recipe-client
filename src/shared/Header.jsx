@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import { BoltIcon, Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,10 +11,10 @@ const Header = () => {
 			<div className="relative flex items-center justify-between px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
 				{/* Logo Section */}
 				<Link to="/" className="inline-flex items-center">
-					<img className="h-12 w-12" src="https://i.ibb.co/Q84nCxL/logo.jpg" alt="" />
-					{/* <span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
+					{/* <img className="h-12 w-12" src="https://i.ibb.co/Q84nCxL/logo.jpg" alt="" /> */}
+					<span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
 						YammiRecipes
-					</span> */}
+					</span>
 				</Link>
 
 				{/* Nav Items Section */}
