@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaUserCircle } from "react-icons/fa";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
 const Header = () => {
@@ -30,17 +30,21 @@ const Header = () => {
 						<NavLink
 							to="/books"
 							className={({ isActive }) => (isActive ? "active" : "default")}>
-							Books
+							Blog
 						</NavLink>
 					</li>
 					<li>
 						<NavLink
-							to="/about"
+							to="/register"
 							className={({ isActive }) => (isActive ? "active" : "default")}>
-							About us
+							Register
 						</NavLink>
 					</li>
 				</ul>
+				<div className="flex gap-3 items-center">
+					<FaUserCircle className="h-8 w-8" />
+					<button className="btn-pr-2">Login</button>
+				</div>
 				{/* Mobile Navbar Section  */}
 				<div className="lg:hidden">
 					{/* Dropdown Open Button */}
@@ -85,7 +89,7 @@ const Header = () => {
 											<Link
 												to="/books"
 												className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400">
-												Books
+												Blog
 											</Link>
 										</li>
 										<li>
