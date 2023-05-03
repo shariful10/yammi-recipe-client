@@ -13,7 +13,7 @@ const Register = () => {
 						Name
 					</label>
 					<input
-						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 						id="name"
 						type="text"
 						placeholder="Enter your name"
@@ -24,19 +24,19 @@ const Register = () => {
 						Email
 					</label>
 					<input
-						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 						id="email"
 						type="email"
 						placeholder="Enter your email"
 					/>
 				</div>
 				<div className="mb-4">
-					<label className="block text-gray-700 font-bold mb-2" htmlFor="photo-url">
+					<label className="block text-gray-700 font-bold mb-2" htmlFor="url">
 						Photo URL
 					</label>
 					<input
-						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-						id="photo-url"
+						className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						id="url"
 						type="url"
 						placeholder="Enter your photo URL"
 					/>
@@ -51,7 +51,7 @@ const Register = () => {
 						</div>
 					</label>
 					<input
-						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 						id="password"
 						type={showPass ? "text" : "password"}
 						placeholder="Enter your password"
@@ -67,7 +67,7 @@ const Register = () => {
 						</div>
 					</label>
 					<input
-						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 						id="confirm-password"
 						type={showComfirm ? "text" : "password"}
 						placeholder="Confirm your password"
@@ -75,7 +75,7 @@ const Register = () => {
 				</div>
 				<div className="flex items-center justify-between">
 					<button
-						className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+						className="btn-pr-2"
 						type="button">
 						Register
 					</button>

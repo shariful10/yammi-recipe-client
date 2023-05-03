@@ -7,12 +7,12 @@ const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	return (
-		<div className="bg-gray-100">
+		<div className="bg-black">
 			<div className="relative flex items-center justify-between px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
 				{/* Logo Section */}
 				<Link to="/" className="inline-flex items-center">
 					{/* <img className="h-12 w-12" src="https://i.ibb.co/Q84nCxL/logo.jpg" alt="" /> */}
-					<span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
+					<span className="ml-2 text-xl font-bold tracking-wide text-white">
 						YammiRecipes
 					</span>
 				</Link>
@@ -28,7 +28,7 @@ const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							to="/books"
+							to="/blog"
 							className={({ isActive }) => (isActive ? "active" : "default")}>
 							Blog
 						</NavLink>
@@ -42,8 +42,8 @@ const Header = () => {
 					</li>
 				</ul>
 				<div className="flex gap-3 items-center">
-					<FaUserCircle className="h-8 w-8" />
-					<button className="btn-pr-2">Login</button>
+					<FaUserCircle className="h-8 w-8 text-white" />
+					<Link to='/login'><button className="btn-pr-2">Login</button></Link>
 				</div>
 				{/* Mobile Navbar Section  */}
 				<div className="lg:hidden">
@@ -87,7 +87,7 @@ const Header = () => {
 										</li>
 										<li>
 											<Link
-												to="/books"
+												to="/blog"
 												className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400">
 												Blog
 											</Link>
