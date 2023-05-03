@@ -5,21 +5,19 @@ const Home = () => {
 	return (
 		<div>
 			<div className="bg-gray-100">
-				<div className="md:flex my-container gap-5 justify-center items-center">
-					<div className="order-1 md:order-none">
-						<h1 className="text-6xl font-bold my-5">Yammi Recipes!</h1>
+				<div className="flex flex-col md:flex-row my-container gap-5 justify-center items-center">
+					<div className=" order-last md:order-first">
+						<h1 className="text-6xl font-bold my-5">Yammi Recipies!</h1>
 						<p className="my-5">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit omnis
-							deleniti aliquid incidunt vitae, a facilis, adipisci ea nesciunt rerum
-							dolorum maxime, praesentium officia vero reprehenderit magnam
-							architecto. Id, ad!
+							A handful of simple ingredients typify the fresh, vibrant flavors of
+							Greek cooking, delicious and testy food forever.
 						</p>
 						<Link to="/blog">
 							<button className="btn-pr">Learn More</button>
 						</Link>
 					</div>
 					<img
-						className="order-2 md:order-none"
+						className="order-first md:order-last md:mx-auto"
 						src="https://i.ibb.co/ggJNsK0/cover-2.png"
 						alt=""
 					/>

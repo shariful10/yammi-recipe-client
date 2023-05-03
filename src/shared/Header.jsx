@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaUserCircle } from "react-icons/fa";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const { user } = useContext(AuthContext);
 
 	return (
 		<div className="bg-black">
 			<div className="relative flex items-center justify-between px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
 				{/* Logo Section */}
 				<Link to="/" className="inline-flex items-center">
-					<span className="ml-2 text-xl font-bold tracking-wide text-blue-400">
-						YammiRecipes
+					<span className="ml-2 text-xl font-semibold tracking-wide text-blue-400">
+						YammiRecipies
 					</span>
 				</Link>
 
@@ -39,11 +42,19 @@ const Header = () => {
 							Register
 						</NavLink>
 					</li>
+					<li>
+						{user ? (
+							""
+						) : (
+							<NavLink
+								to="/login"
+								className={({ isActive }) => (isActive ? "active" : "default")}>
+								Login
+							</NavLink>
+						)}
+					</li>
 				</ul>
-				<div className="flex gap-3 items-center">
-					<FaUserCircle className="h-8 w-8 text-white" />
-					<Link to='/login'><button className="btn-pr-2">Login</button></Link>
-				</div>
+
 				{/* Mobile Navbar Section  */}
 				<div className="lg:hidden">
 					{/* Dropdown Open Button */}
@@ -97,10 +108,51 @@ const Header = () => {
 												About Us
 											</Link>
 										</li>
+										<li>
+											<NavLink
+												to="/register"
+												className={({ isActive }) =>
+													isActive ? "active" : "default"
+												}>
+												Register
+											</NavLink>
+										</li>
+										<li>
+											{user ? (
+												""
+											) : (
+												<NavLink
+													to="/login"
+													className={({ isActive }) =>
+														isActive ? "active" : "default"
+													}>
+													Login
+												</NavLink>
+											)}
+										</li>
+										<div className="flex gap-3 items-center">
+											{user && (
+												<button className="btn-pr-2 block md:hidden">
+													Log Out
+												</button>
+											)}
+										</div>
 									</ul>
 								</nav>
 							</div>
 						</div>
+					)}
+				</div>
+				<div className="flex gap-3 items-center">
+					{user ? (
+						<>
+							<button className="btn-pr-2 hidden md:block">Log Out</button>
+							<h1 title={user?.displayName} className="text-white">
+								{user?.displayName}
+							</h1>
+						</>
+					) : (
+						<FaUserCircle className="h-8 w-8 text-white" />
 					)}
 				</div>
 			</div>
