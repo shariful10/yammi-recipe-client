@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Register = () => {
 	const [showPass, setShowPass] = useState(false);
@@ -7,7 +8,8 @@ const Register = () => {
 
 	return (
 		<div className="my-container">
-			<form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-3/5 mx-auto">
+			<h1 className="text-4xl font-semibold md:text-center mb-5">Please Register</h1>
+			<form className="bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4 md:w-3/5 mx-auto">
 				<div className="mb-4">
 					<label className="block text-gray-700 font-bold mb-2" htmlFor="name">
 						Name
@@ -17,6 +19,7 @@ const Register = () => {
 						id="name"
 						type="text"
 						placeholder="Enter your name"
+						required
 					/>
 				</div>
 				<div className="mb-4">
@@ -28,6 +31,7 @@ const Register = () => {
 						id="email"
 						type="email"
 						placeholder="Enter your email"
+						required
 					/>
 				</div>
 				<div className="mb-4">
@@ -39,6 +43,7 @@ const Register = () => {
 						id="url"
 						type="url"
 						placeholder="Enter your photo URL"
+						required
 					/>
 				</div>
 				<div className="mb-4">
@@ -55,6 +60,7 @@ const Register = () => {
 						id="password"
 						type={showPass ? "text" : "password"}
 						placeholder="Enter your password"
+						required
 					/>
 				</div>
 				<div className="mb-4">
@@ -62,7 +68,7 @@ const Register = () => {
 						<div className="flex justify-between items-center">
 							Confirm Password
 							<span onClick={() => setShowComfirm(!showComfirm)} className="mr-2">
-								{showPass ? <FaEyeSlash /> : <FaEye />}
+								{showComfirm ? <FaEyeSlash /> : <FaEye />}
 							</span>
 						</div>
 					</label>
@@ -71,14 +77,19 @@ const Register = () => {
 						id="confirm-password"
 						type={showComfirm ? "text" : "password"}
 						placeholder="Confirm your password"
+						required
 					/>
 				</div>
-				<div className="flex items-center justify-between">
-					<button
-						className="btn-pr-2"
-						type="button">
+				<div className="md:flex items-center justify-between">
+					<button className="btn-pr-2" type="button">
 						Register
 					</button>
+					<p className="mt-2 md:mt-0">
+						Already have an account?{" "}
+						<Link to="/login" className="text-blue-700 underline">
+							Login
+						</Link>
+					</p>
 				</div>
 			</form>
 		</div>
