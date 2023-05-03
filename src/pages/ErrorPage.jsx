@@ -17,7 +17,7 @@ const ErrorPage = () => {
 					<p className="text-2xl font-semibold md:text-3xl text-red-800 mb-8">
 						{error?.message}
 					</p>
-					<Link to="/" className="btn">
+					<Link to="/" className="btn-primary">
 						Back to Home
 					</Link>
 				</div>
