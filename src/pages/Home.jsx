@@ -5,7 +5,7 @@ const Home = () => {
 	return (
 		<div className="bg-gray-100">
 			<div className="md:flex my-container gap-5 justify-center items-center">
-				<div className="order-2 md:order-1">
+				<div className="order-1 md:order-none">
 					<h1 className="text-5xl font-bold my-5">Yammi Recipes!</h1>
 					<p className="my-5">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit omnis
@@ -18,7 +18,7 @@ const Home = () => {
 					</Link>
 				</div>
 				<img
-					className="order-1 md:order-2"
+					className="order-2 md:order-none"
 					src="https://i.ibb.co/ggJNsK0/cover-2.png"
 					alt=""
 				/>
