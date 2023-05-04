@@ -10,6 +10,7 @@ import Register from "./pages/Register.jsx";
 import Blog from "./pages/Blog.jsx";
 import Login from "./pages/Login.jsx";
 import AuthProvider from "./provider/AuthProvider.jsx";
+import ChefData from "./pages/ChefData.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -20,7 +21,12 @@ const router = createBrowserRouter([
 			{
 				path: "/",
 				element: <Home />,
-				loader: () => fetch("http://localhost:5000/chef-data"),
+				loader: () => fetch("https://yammi-recipe-server-shariful10.vercel.app/chef-data"),
+			},
+			{
+				path: "/chef/:id",
+				element: <ChefData />,
+				loader: ({ params }) => fetch(`https://yammi-recipe-server-shariful10.vercel.app/chef/${params.id}`),
 			},
 			{
 				path: "/login",

@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: "AIzaSyCWg5J0COsJ_hkRFyoZRiuE0yMCC_DWrxc",
-	authDomain: "yammi-recipe.firebaseapp.com",
-	projectId: "yammi-recipe",
-	storageBucket: "yammi-recipe.appspot.com",
-	messagingSenderId: "819781351406",
-	appId: "1:819781351406:web:aa4ab80800c4f0919d00ff",
+	apiKey: import.meta.env.VITE_APIKEY,
+	authDomain: import.meta.env.VITE_AUTHDOMAIN,
+	projectId: import.meta.env.VITE_PROJECTID,
+	storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+	messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+	appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

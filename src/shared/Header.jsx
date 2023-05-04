@@ -146,7 +146,7 @@ const Header = () => {
 				<div className="flex gap-3 items-center">
 					{user ? (
 						<>
-							<button className="btn-pr-2 hidden md:block">Log Out</button>
+							<button className="btn-pr-2">Log Out</button>
 							<img title={user?.displayName} src={user?.photoURL} alt="" />
 						</>
 					) : (
