@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ChefData = () => {
 	const chef = useLoaderData();
@@ -12,14 +14,17 @@ const ChefData = () => {
 
 	const handleFavorite = (e) => {
 		setFavorite(e.target.checked);
+		toast.success("Add to Favorite");
 	};
 
 	const handleFavorite2 = (e) => {
 		setFavorite2(e.target.checked);
+		toast.success("Add to Favorite");
 	};
 
 	const handleFavorite3 = (e) => {
 		setFavorite3(e.target.checked);
+		toast.success("Add to Favorite");
 	};
 
 	return (
