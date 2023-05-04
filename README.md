@@ -11,7 +11,7 @@
 
 * In the Recipe section, each job has a View Details button, which when clicked will dynamically show job details for each job. And there will show an Apply Now button where on click the data will be set to LocalStorage.
 
-* The numbers obtained in 7 Assignments are shown through Recharts on the Statistics page.
+* Password Authentication.
 
 * The data of all the jobs that have been applied for are shown in the form of cards on the Applied Job page from Localstorage.
 
