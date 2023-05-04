@@ -9,7 +9,7 @@
 
 * There are 4 Food in the Featured Jobs section under which there is a See All Jobs button where you can click on the rest of the jobs.
 
-* In the Featured Jobs section, each job has a View Details button, which when clicked will dynamically show job details for each job. And there will show an Apply Now button where on click the data will be set to LocalStorage.
+* In the Recipe section, each job has a View Details button, which when clicked will dynamically show job details for each job. And there will show an Apply Now button where on click the data will be set to LocalStorage.
 
 * The numbers obtained in 7 Assignments are shown through Recharts on the Statistics page.
 
