@@ -147,9 +147,7 @@ const Header = () => {
 					{user ? (
 						<>
 							<button className="btn-pr-2 hidden md:block">Log Out</button>
-							<h1 title={user?.displayName} className="text-white">
-								{user?.displayName}
-							</h1>
+							<img title={user?.displayName} src={user?.photoURL} alt="" />
 						</>
 					) : (
 						<FaUserCircle className="h-8 w-8 text-white" />
