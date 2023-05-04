@@ -10,7 +10,7 @@ const Home = () => {
 			<div className="bg-gray-100">
 				<div className="flex flex-col md:flex-row my-container gap-5 justify-center items-center">
 					<div className=" order-last md:order-first">
-						<h1 className="text-6xl font-bold my-5">Yammi Recipies!</h1>
+						<h1 className="text-6xl font-bold my-5">Yammi Recipes!</h1>
 						<p className="my-5">
 							A handful of simple ingredients typify the fresh, vibrant flavors of
 							Greek cooking, delicious and testy food forever.
@@ -27,7 +27,7 @@ const Home = () => {
 				</div>
 			</div>
 			<div className="my-container">
-				<h2 className="text-4xl text-center font-bold">Our Recipies</h2>
+				<h2 className="text-4xl text-center font-bold">Our Recipes</h2>
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 justify-center mx-auto">
 					<div>
 						<img

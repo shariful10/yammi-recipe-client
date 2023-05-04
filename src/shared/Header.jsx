@@ -15,7 +15,7 @@ const Header = () => {
 				{/* Logo Section */}
 				<Link to="/" className="inline-flex items-center">
 					<span className="text-xl font-semibold tracking-wide text-blue-400">
-						YammiRecipies
+						YammiRecipes
 					</span>
 				</Link>
 
