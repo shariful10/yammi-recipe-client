@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
@@ -72,16 +72,14 @@ const Login = () => {
 					</p>
 				</div>
 				<div className="md:flex justify-between mt-4">
-					<div>
-						<button className="px-4 py-3 border-2 rounded border-blue-400 hover:bg-blue-400 text-blue-400 hover:text-white font-semibold">
-							Login With Google
-						</button>
-					</div>
-					<div>
-						<button className="px-4 py-3 border-2 rounded border-blue-400 hover:bg-blue-400 text-blue-400 hover:text-white font-semibold mt-2 md:mt-0">
-							Login With GitHub
-						</button>
-					</div>
+					<button className="social-btn flex items-center">
+						<FaGoogle />
+						<span className="ml-2">Login With Google</span>
+					</button>
+					<button className="social-btn flex items-center mt-2 md:mt-0">
+						<FaGithub />
+						<span className="ml-2">Login With GitHub</span>
+					</button>
 				</div>
 			</form>
 		</div>
