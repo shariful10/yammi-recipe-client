@@ -15,6 +15,6 @@
 
 * The data of all the jobs that have been applied for are shown in the form of cards on the Applied Job page from Localstorage.
 
-* On the Applied Job page, there is a filter button above the card, where if clicked, the data of the card will be filtered.
+* On the Recipe page, there is a filter button above the card, where if clicked, the data of the card will be filtered.
 
 * Answers to 4 questions are given in the form of cards on the blog page.
