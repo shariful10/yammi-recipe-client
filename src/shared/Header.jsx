@@ -48,17 +48,6 @@ const Header = () => {
 							Register
 						</NavLink>
 					</li>
-					<li>
-						{user ? (
-							""
-						) : (
-							<NavLink
-								to="/login"
-								className={({ isActive }) => (isActive ? "active" : "default")}>
-								Login
-							</NavLink>
-						)}
-					</li>
 				</ul>
 
 				{/* Mobile Navbar Section  */}
@@ -123,19 +112,6 @@ const Header = () => {
 												Register
 											</NavLink>
 										</li>
-										<li>
-											{user ? (
-												""
-											) : (
-												<NavLink
-													to="/login"
-													className={({ isActive }) =>
-														isActive ? "active" : "default"
-													}>
-													Login
-												</NavLink>
-											)}
-										</li>
 										<div className="flex gap-3 items-center">
 											{user && (
 												<button
@@ -165,7 +141,9 @@ const Header = () => {
 							/>
 						</>
 					) : (
-						<FaUserCircle className="h-8 w-8 text-white" />
+						<Link to="/login">
+							<button className="btn-pr-2">Login</button>
+						</Link>
 					)}
 				</div>
 			</div>
