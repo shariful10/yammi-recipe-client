@@ -71,6 +71,26 @@ const Home = () => {
 					))}
 				</div>
 			</div>
+			<div className="my-container grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+				<img className="rounded-lg" src="https://i.ibb.co/pPqSfbC/ab.jpg" alt="" />
+				<div>
+					<h3 className="text-2xl w-full font-semibold">
+						It's time to kick start a new lifestyle. Start eating, feeling & living
+						better today. Build good habits with us in no time.
+					</h3>
+					<p className="my-5">
+						The key difference between uncontrolled and controlled is the level of
+						control that the developer has over their behavior. With an uncontrolled
+						component, the developer must rely on external factors to determine how the
+						component behaves. With a controlled component, the developer has complete
+						control over the component's behavior, and can define it to meet their
+						specific requirements.
+					</p>
+					<Link to="/blog">
+						<button className="btn-pr">Learn More</button>
+					</Link>
+				</div>
+			</div>
 		</div>
 	);
 };

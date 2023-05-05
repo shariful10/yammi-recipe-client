@@ -9,10 +9,10 @@ const Footer = () => {
 				<div>
 					<h3 className="text-2xl text-blue-400">Address</h3>
 					<div className="flex items-center mt-2">
-						<FaMapMarkerAlt className="text-white" />
-						<p className="text-white ml-2">St 18, Johnson Road</p>
+						<FaMapMarkerAlt className="text-white hover:text-blue-400" />
+						<p className="text-white ml-2 hover:text-blue-400">St 18, Johnson Road</p>
 					</div>
-					<p className="text-white ml-4">New York 1600, USA</p>
+					<p className="text-white ml-4 hover:text-blue-400">New York 1600, USA</p>
 				</div>
 				<div>
 					<h3 className="text-2xl text-blue-400">Quick Link</h3>
