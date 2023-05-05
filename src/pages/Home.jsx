@@ -31,7 +31,7 @@ const Home = () => {
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 justify-center mx-auto">
 					<div>
 						<img
-							className="w-56 rounded-[50%] mx-auto"
+							className="w-[160px] h-[160px] md:w-[250px] md:h-[250px] rounded-[50%] mx-auto"
 							src="https://i.ibb.co/YRkwqW2/r1.jpg"
 							alt=""
 						/>
@@ -39,7 +39,7 @@ const Home = () => {
 					</div>
 					<div>
 						<img
-							className="w-52 rounded-[50%] mx-auto"
+							className="w-[160px] h-[160px] md:w-[250px] md:h-[250px] rounded-[50%] mx-auto"
 							src="https://i.ibb.co/nMnsQJ0/r2.jpg"
 							alt=""
 						/>
@@ -47,7 +47,7 @@ const Home = () => {
 					</div>
 					<div>
 						<img
-							className="w-52 rounded-[50%] mx-auto"
+							className="w-[160px] h-[160px] md:w-[250px] md:h-[250px] rounded-[50%] mx-auto"
 							src="https://i.ibb.co/JmXKQ4p/r3.jpg"
 							alt=""
 						/>
@@ -55,7 +55,7 @@ const Home = () => {
 					</div>
 					<div>
 						<img
-							className="w-52 rounded-[50%] mx-auto"
+							className="w-[160px] h-[160px] md:w-[250px] md:h-[250px] rounded-[50%] mx-auto"
 							src="https://i.ibb.co/TMK9R0w/r4.jpg"
 							alt=""
 						/>
