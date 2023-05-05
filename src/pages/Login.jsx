@@ -1,12 +1,17 @@
 import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 	const [showPass, setShowPass] = useState(false);
+	const navigate = useNavigate();
+	const location = useLocation();
+	const from = location.state?.from?.pathname || "/";
 
-	const { signIn } = useContext(AuthContext);
+	const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
 
 	const handleLogin = (e) => {
 		e.preventDefault();
@@ -18,7 +23,49 @@ const Login = () => {
 			.then((res) => {
 				const loggedUser = res.user;
 				console.log(loggedUser);
+				toast.success("Successfully Login", {
+					position: "top-right",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "light",
+				});
+				navigate(from, { replace: true });
+			})
+			.catch((error) => {
+				console.log(error);
+				toast.error("Something Went Wrong", {
+					position: "top-right",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "light",
+				});
+			});
+	};
+
+	const handleGoogleLogin = () => {
+		googleLogin()
+			.then((res) => {
+				const loggedUser = res.user;
 				console.log(loggedUser);
+				navigate(from, { replace: true });
+			})
+			.catch((err) => console.log(err));
+	};
+
+	const handleGithubLogin = () => {
+		githubLogin()
+			.then((res) => {
+				const loggedUser = res.user;
+				console.log(loggedUser);
+				navigate(from, { replace: true });
 			})
 			.catch((err) => console.log(err));
 	};
@@ -71,17 +118,17 @@ const Login = () => {
 						</Link>
 					</p>
 				</div>
-				<div className="md:flex justify-between mt-4">
-					<button className="social-btn flex items-center">
-						<FaGoogle />
-						<span className="ml-2">Login With Google</span>
-					</button>
-					<button className="social-btn flex items-center mt-2 md:mt-0">
-						<FaGithub />
-						<span className="ml-2">Login With GitHub</span>
-					</button>
-				</div>
 			</form>
+			<div className="md:flex justify-center gap-4 mt-4">
+				<button re onClick={handleGoogleLogin} className="social-btn flex items-center">
+					<FaGoogle />
+					<span className="ml-2">Login With Google</span>
+				</button>
+				<button onClick={handleGithubLogin} className="social-btn flex items-center mt-2 md:mt-0">
+					<FaGithub />
+					<span className="ml-2">Login With GitHub</span>
+				</button>
+			</div>
 		</div>
 	);
 };

@@ -11,8 +11,9 @@ import Blog from "./pages/Blog.jsx";
 import Login from "./pages/Login.jsx";
 import AuthProvider from "./provider/AuthProvider.jsx";
 import ChefData from "./pages/ChefData.jsx";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
 	{
@@ -27,8 +28,13 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/chef/:id",
-				element: <ChefData />,
-				loader: ({ params }) => fetch(`https://yammi-recipe-server-shariful10.vercel.app/chef/${params.id}`),
+				element: (
+					<PrivateRoute>
+						<ChefData />
+					</PrivateRoute>
+				),
+				loader: ({ params }) =>
+					fetch(`https://yammi-recipe-server-shariful10.vercel.app/chef/${params.id}`),
 			},
 			{
 				path: "/login",

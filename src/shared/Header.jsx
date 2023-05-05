@@ -7,7 +7,13 @@ import { AuthContext } from "../provider/AuthProvider";
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	const { user } = useContext(AuthContext);
+	const { user, logOut } = useContext(AuthContext);
+
+	const handleLogOut = () => {
+		logOut()
+			.then()
+			.catch((err) => console.log(err));
+	};
 
 	return (
 		<div className="bg-black">
@@ -132,7 +138,9 @@ const Header = () => {
 										</li>
 										<div className="flex gap-3 items-center">
 											{user && (
-												<button className="btn-pr-2 block md:hidden">
+												<button
+													onClick={handleLogOut}
+													className="btn-pr-2 block md:hidden">
 													Log Out
 												</button>
 											)}
@@ -146,8 +154,22 @@ const Header = () => {
 				<div className="flex gap-3 items-center">
 					{user ? (
 						<>
-							<button className="btn-pr-2">Log Out</button>
-							<img title={user?.displayName} src={user?.photoURL} alt="" />
+							<button onClick={handleLogOut} className="btn-pr-2 hidden md:block">
+								Log Out
+							</button>
+							{user ? (
+								<img
+									className="h-10 rounded-[50%]"
+									title={user?.displayName}
+									src={user?.photoURL}
+									alt=""
+								/>
+							) : (
+								<FaUserCircle
+									title={user?.displayName}
+									className="h-8 w-8 text-white"
+								/>
+							)}
 						</>
 					) : (
 						<FaUserCircle className="h-8 w-8 text-white" />

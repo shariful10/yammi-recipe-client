@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
 	const [showPass, setShowPass] = useState(false);
@@ -18,10 +20,46 @@ const Register = () => {
 		const password = form.password.value;
 		const confirm = form.confirm.value;
 		console.log(name, email, url, password, confirm);
+		if (password.length < 6) {
+			toast.error("Password Must Be Minimum 6 Characters", {
+				position: "top-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+			});
+			return;
+		}
+		if (password !== confirm) {
+			toast.error("Password Doesn't Match", {
+				position: "top-right",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: "light",
+			});
+			return;
+		}
 		createUser(email, password)
 			.then((res) => {
 				const createdUser = res.user;
 				console.log(createdUser);
+				toast.success("Successfully Created", {
+					position: "top-right",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "light",
+				});
 			})
 			.catch((err) => console.log(err));
 	};
