@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const ChefDetails = ({ cfdata }) => {
 	const { id, name, img, rec_num, expr, like } = cfdata;
 	return (
-		<div className="card lg:card-side bg-gray-100 p-5">
+		<div className="card lg:card-side bg-gray-100 px-5 py-5 md:py-0">
 			<figure>
 				<img
-					className="w-full h-[250px] md:w-36 md:h-36 rounded-lg shadow-lg"
+					className="w-full h-[250px] md:w-36 md:h-44 rounded-lg shadow-lg"
 					src={img}
 					alt="Album"
 				/>
