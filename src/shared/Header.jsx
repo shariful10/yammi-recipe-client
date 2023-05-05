@@ -7,7 +7,7 @@ import { AuthContext } from "../provider/AuthProvider";
 const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	const { user, logOut } = useContext(AuthContext);
+	const { user, logOut, createUser, updateUserData } = useContext(AuthContext);
 
 	const handleLogOut = () => {
 		logOut()
@@ -157,19 +157,12 @@ const Header = () => {
 							<button onClick={handleLogOut} className="btn-pr-2 hidden md:block">
 								Log Out
 							</button>
-							{user ? (
-								<img
-									className="h-10 rounded-[50%]"
-									title={user?.displayName}
-									src={user?.photoURL}
-									alt=""
-								/>
-							) : (
-								<FaUserCircle
-									title={user?.displayName}
-									className="h-8 w-8 text-white"
-								/>
-							)}
+							<img
+								className="h-[38px] w-[38px] rounded-[50%]"
+								title={user?.displayName}
+								src={user?.photoURL}
+								alt=""
+							/>
 						</>
 					) : (
 						<FaUserCircle className="h-8 w-8 text-white" />

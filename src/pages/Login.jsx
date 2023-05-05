@@ -124,7 +124,9 @@ const Login = () => {
 					<FaGoogle />
 					<span className="ml-2">Login With Google</span>
 				</button>
-				<button onClick={handleGithubLogin} className="social-btn flex items-center mt-2 md:mt-0">
+				<button
+					onClick={handleGithubLogin}
+					className="social-btn flex items-center mt-2 md:mt-0">
 					<FaGithub />
 					<span className="ml-2">Login With GitHub</span>
 				</button>

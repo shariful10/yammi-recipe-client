@@ -9,7 +9,7 @@ const Register = () => {
 	const [showPass, setShowPass] = useState(false);
 	const [showComfirm, setShowComfirm] = useState(false);
 
-	const { createUser } = useContext(AuthContext);
+	const { user, createUser, updateUserData } = useContext(AuthContext);
 
 	const handleRegister = (e) => {
 		e.preventDefault();
@@ -60,6 +60,13 @@ const Register = () => {
 					progress: undefined,
 					theme: "light",
 				});
+				updateUserData(createdUser, name, url) // <---- call the updateUserData function with the user and url parameters
+					.then(() => {
+						console.log("Successfully updated user data");
+					})
+					.catch((error) => {
+						console.log("Error updating user data:", error);
+					});
 			})
 			.catch((err) => console.log(err));
 	};
